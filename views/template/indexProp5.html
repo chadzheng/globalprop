@@ -1,0 +1,150 @@
+<div class='row'>
+<!-- news and data-->
+<div class="col-md-6 col-sm-12">
+  <div class="news" ng-click='showPropDetail(specialProp.REFERENCE)'>
+    <div class="news_title">最新推介</div>
+    <div class="clear"></div>
+    <div class="news_place">{{specialProp.ADDRESS}}</div>
+    <div class="clear"></div>
+    <div class="news_detail">
+      <table width="100%">
+        <tr>
+          <td>面積：</td>
+          <td>{{specialProp.AREA}}呎</td>
+        </tr>
+        <tr>
+          <td>售：</td>
+          <td>{{specialProp.PRICE|currencyunit:'':true|currency:'$':0 }}</td>
+        </tr>
+        <tr>
+          <td>租：</td>
+          <td>{{specialProp.RENT|currencyunit:'':true|currency:'$':0 }}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><span class="update">更新日期：{{specialProp.UPDATEDATE}}</span></td>
+        </tr>
+      </table>
+    </div>
+    <div class="clear"></div>
+    <div class=" news_img "> <img class='img-responsive center-block ' style='max-height:180px;width:auto' ng-src="{{base.thumbImage}}{{specialProp.PHOTONUM}}"> </div>
+  </div>
+</div>
+<!--
+<div class="col-md-6 col-sm-12">
+  <div class="news">
+    <div class="news_title">最新資訊</div>
+    <div class="clear"></div>
+    <div class="news_place">
+      <table width="100%">
+        <tr>
+          <td width ='25%' >日期</td>
+          <td width ='75%'>標題</td>
+        </tr>
+      </table>
+      <div style='overflow-y:scroll;width:100%;height:240px' class='newTableDiv'>
+        
+          <table width='100%' class='table-striped newsTableContent table-hover '>
+            <tr ng-repeat= 'new in news' ng-click='setSelected($index)' class='newsTable{{$index}} newRowContent' >
+              <td width ='25%' style="border-right:2px solid">{{new.UPLOADDATE}}</td>
+              <td width ='75%' style='text-align:left'>{{new.TITLE|limitTo:20}}</td>
+            </tr>
+          </table>
+        
+    </div>
+    
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+-->
+<div class='row new_info' ng-repeat='indexProp in indexProps|filter:{PROPTYPE:"Industrial"}' ng-click='showPropDetail({{indexProp.REFERENCE}})'>
+  <div class='col-md-3 new_info_tb2'>
+    <div class="news_info_title"><span class="info_title">工廈</span></div>
+    <p>{{indexProp.ADDRESS}}</p>
+    </div>
+    <div class='col-md-6 col-sm-8 col-xs-8 new_info_tb1' style="background:#fbfbfb;">
+      <div class='col-md-6 col-sm-3  col-xs-6'>面積：</div>
+      <div class='col-md-4 col-sm-3  col-xs-6'>{{indexProp.AREA|currencyunit:'':true|currency:'':0}}呎</div>
+      <div class='col-md-6 col-sm-3  col-xs-6'>售：</div>
+      <div class='col-md-4 col-sm-3  col-xs-6'>${{indexProp.PRICE}}</div>
+      <div class='col-md-6 col-sm-3  col-xs-6'>租：</div>
+      <div class='col-md-4 col-sm-3  col-xs-6'>${{indexProp.RENT}}</div>
+      <div class='col-md-6 col-sm-3  col-xs-6' style="font-size:10px">更新日期：</div>
+      <div class='col-md-1 col-sm-3  col-xs-6' style="font-size:10px">{{indexProp.UPDATEDATE}}</div>
+      <div class='col-md-3 hidden-sm hidden-xs' style="float:right;"><img class="img-responsive" style="margin-top:-5px;" src="images/btn_detail.png"></div>     
+    </div>
+    <div class='col-md-3 col-sm-4 col-xs-4 new_info_tb4'><img class="img-responsive" style="max-height:80px;;width:auto" ng-src='{{base.thumbImage}}{{indexProp.PHOTONUM}}'></div>
+</div>
+
+<div class='row new_info' ng-repeat='indexProp in indexProps|filter:{PROPTYPE:"Office"}' ng-click='showPropDetail({{indexProp.REFERENCE}})'>
+  <div class='col-md-3 new_info_tb1'style="background:#51a821; color:#fff;">
+    <div class="news_info_title"><span class="info_title">寫字樓</span></div>
+    <p>{{indexProp.ADDRESS}}</p>
+    </div>
+    <div class='col-md-6 col-sm-8 col-xs-8 new_info_tb1' style="background:#fbfbfb; ">
+      <div class='col-md-6 col-sm-3  col-xs-6'>面積：</div>
+      <div class='col-md-4 col-sm-3  col-xs-6'>{{indexProp.AREA|currencyunit:'':true|currency:'':0}}呎</div>
+      <div class='col-md-6 col-sm-3  col-xs-6'>售：</div>
+      <div class='col-md-4 col-sm-3  col-xs-6'>${{indexProp.PRICE}}</div>
+      <div class='col-md-6 col-sm-3  col-xs-6'>租：</div>
+      <div class='col-md-4 col-sm-3  col-xs-6'>${{indexProp.RENT}}</div>
+      <div class='col-md-6 col-sm-3  col-xs-6' style="font-size:10px">更新日期：</div>
+      <div class='col-md-1 col-sm-3  col-xs-6' style="font-size:10px">{{indexProp.UPDATEDATE}}</div>
+      <div class='col-md-3 hidden-sm hidden-xs' style="float:right;"><img class="img-responsive" style="margin-top:-5px;" src="images/btn_detail.png"></div>     
+    </div>
+    <div class='col-md-3 col-sm-4 col-xs-4 new_info_tb4'><img class="img-responsive" style="max-height:80px;;width:auto" ng-src='{{base.thumbImage}}{{indexProp.PHOTONUM}}'></div>
+</div>
+
+<div class='row new_info' ng-repeat='indexProp in indexProps|filter:{PROPTYPE:"GroundFloor"}' ng-click='showPropDetail({{indexProp.REFERENCE}})'>
+  <div class='col-md-3 new_info_tb1'style="background:#bd32e5; color:#fff;">
+    <div class="news_info_title"><span class="info_title">地廠</span></div>
+    <p>{{indexProp.ADDRESS}}</p>
+    </div>
+    <div class='col-md-6 col-sm-8 col-xs-8 new_info_tb1' style="background:#fbfbfb; ">
+      <div class='col-md-6 col-sm-3  col-xs-6'>面積：</div>
+      <div class='col-md-4 col-sm-3  col-xs-6'>{{indexProp.AREA|currencyunit:'':true|currency:'':0}}呎</div>
+      <div class='col-md-6 col-sm-3  col-xs-6'>售：</div>
+      <div class='col-md-4 col-sm-3  col-xs-6'>${{indexProp.PRICE}}</div>
+      <div class='col-md-6 col-sm-3  col-xs-6'>租：</div>
+      <div class='col-md-4 col-sm-3  col-xs-6'>${{indexProp.RENT}}</div>
+      <div class='col-md-6 col-sm-3  col-xs-6' style="font-size:10px">更新日期：</div>
+      <div class='col-md-1 col-sm-3  col-xs-6' style="font-size:10px">{{indexProp.UPDATEDATE}}</div>
+      <div class='col-md-3 hidden-sm hidden-xs' style="float:right;"><img class="img-responsive" style="margin-top:-5px;" src="images/btn_detail.png"></div>     
+    </div>
+    <div class='col-md-3 col-sm-4 col-xs-4 new_info_tb4'><img class="img-responsive" style="max-height:80px;;width:auto" ng-src='{{base.thumbImage}}{{indexProp.PHOTONUM}}'></div>
+</div>
+
+
+<div class='row new_info' ng-repeat='indexProp in indexProps|filter:{PROPTYPE:"Carparks"}' ng-click='showPropDetail({{indexProp.REFERENCE}})'>
+  <div class='col-md-3 new_info_tb3'>
+    <div class="news_info_title"><span class="info_title">車位</span></div>
+    <p>{{indexProp.ADDRESS}}</p>
+    </div>
+    <div class='col-md-6 col-sm-8 col-xs-8 new_info_tb1' style="background:#fbfbfb; ">
+      <div class='col-md-6 col-sm-3  col-xs-6'>面積：</div>
+      <div class='col-md-4 col-sm-3  col-xs-6'>{{indexProp.AREA|currencyunit:'':true|currency:'':0}}呎</div>
+      <div class='col-md-6 col-sm-3  col-xs-6'>售：</div>
+      <div class='col-md-4 col-sm-3  col-xs-6'>${{indexProp.PRICE}}</div>
+      <div class='col-md-6 col-sm-3  col-xs-6'>租：</div>
+      <div class='col-md-4 col-sm-3  col-xs-6'>${{indexProp.RENT}}</div>
+      <div class='col-md-6 col-sm-3  col-xs-6' style="font-size:10px">更新日期：</div>
+      <div class='col-md-1 col-sm-3  col-xs-6' style="font-size:10px">{{indexProp.UPDATEDATE}}</div>
+      <div class='col-md-3 hidden-sm hidden-xs' style="float:right;"><img class="img-responsive" style="margin-top:-5px;" src="images/btn_detail.png"></div>     
+    </div>
+    <div class='col-md-3 col-sm-4 col-xs-4 new_info_tb4'><img class="img-responsive" style="max-height:80px;;width:auto" ng-src='{{base.thumbImage}}{{indexProp.PHOTONUM}}'></div>
+</div>
+
+</div>
+<script type="text/ng-template" id="newsContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">{{news.TITLE}}</h3>
+        </div>
+        <div class="modal-body" ng-bind-html="news.CONTENT">
+            
+            
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>

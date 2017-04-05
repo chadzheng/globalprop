@@ -1,0 +1,10 @@
+Search:<input ng-model="things"/>
+Sort by:
+<select name="" id="" ng-model="orderThing">
+	<option value="name">Name</option>
+	<option value="age">age</option>
+</select>
+<ul ng-repeat="a in awesomeThings |filter:things |orderBy:orderThing">
+	<li ng-class="{'bg-info': clicked}" ng-click="clicked = !clicked">{{a}}</li>
+</ul>
+,

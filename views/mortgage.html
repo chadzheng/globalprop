@@ -1,0 +1,445 @@
+<style>
+form {
+	margin: 0px;
+	padding: 0px;
+	font-size:12px;
+	font-family:"微軟正黑體";
+}
+table.list {
+	table-layout: fixed;
+	border-collapse: collapse;
+	width: 100%;
+}
+td.listHead {
+	font-weight: bold;
+	font-size: 110%;
+	height: 30px;
+	padding: 3px 5px 0px 5px;
+	border-bottom: 3px solid #00355c;
+	vertical-align: bottom;
+	text-align: right;
+}
+.col1, .col2, .col3, .col4, .col5 {
+	text-align: right;
+	padding: 3px 5px 0px 5px;
+}
+.col1 {
+	width: 12%;
+}
+.col2 {
+	width: 22%;
+}
+.col3 {
+	width: 22%;
+}
+.col4 {
+	width: 22%;
+}
+.col5 {
+	width: 22%;
+}
+.inputBox {
+	width: 150px;
+}
+#content {
+	margin:0 auto;
+	padding:0px 0px;
+}
+#mgFormWrap {
+	width: 318px;
+	float:left;
+	border:1px solid #79BD28;
+	padding: 10px;
+	margin:0px 10px 10px 0;
+	background-color:#ffffff;
+	height:225px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#roughTable {
+	width: 395px;
+	float:left;
+	background:#fafafa;
+	border:#8e692b 1px dashed;
+	padding:10px;
+	margin:0px 0 10px 0px;
+	font-size:12px;
+	font-family:"微軟正黑體";
+	height:225px
+}
+#detailTable {
+	width:100%;
+	;
+	margin:0px auto;
+	font-size:12px;
+	font-family:"微軟正黑體";
+}
+.center {
+	text-align:center
+}
+.prin1, .prin2 {
+	clear:both;
+}
+.prin1_tab, .prin2_tab {
+	margin-top:10px;
+	width:698px;
+	border:1px solid #999;
+}
+.prin1_tab tr, .prin2_tab tr {
+	height:30px;
+}
+.ui-tabs .ui-tabs-panel {
+	display: block;
+	border-width: 0;
+	padding: 1em 1em;
+	background: none;
+}
+#tabs {
+	margin-top:10px;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+	background: #ffffff;
+	color: #363636;
+	border: 1px solid #A2631D;
+}
+.tax {
+	border-collapse:collapse;
+	font-family:"微軟正黑體";
+	font-size:14px;
+}
+.tax tr td {
+	text-align:center
+}
+.tax tr {
+	height:28px;
+}
+.gray2 {
+	background:#dde0e7;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	
+	
+	$("#principal").val($("#price").val()*$("#mortgagerate").val()/100);
+	
+});
+</script>
+<script language="javascript">
+<!--
+function out(price,mortgagerate,rate,period){
+	window.open("mortgageDetail.php?price="+price+"&mortgagerate="+mortgagerate+"&rate="+rate+"&period="+period,"","titlebar=no,location=no,resizable=yes, scrollbars=yes,width=700, height=700");
+}
+//-->
+</script>
+<script>
+<!--
+function fillForm(price, mortgageRate, principal, rate, period) {
+    document.getElementById("price").value        = (price)                 ? price : '';
+    document.getElementById("mortgagerate").value = (mortgageRate)          ? mortgageRate : '';
+    document.getElementById("principal").value    = (price && mortgageRate) ? toFixedNum(principal) : '';
+    document.getElementById("rate").value         = (rate)                  ? rate : '';
+    document.getElementById("period").value       = (period)                ? period : '';
+}
+function clearForm() {
+    document.getElementById("price").value        = '';
+    document.getElementById("mortgagerate").value = '';
+    document.getElementById("principal").value    = '';
+    document.getElementById("rate").value         = '';
+    document.getElementById("period").value       = '';
+}
+
+function checkForm() {
+    var principal = document.getElementById("principal").value;
+    var rate      = document.getElementById("rate").value;
+    var period    = document.getElementById("period").value;
+
+    var output = false;
+    if (principal && rate && period) {
+        if (rate>0 && rate<100) {
+            output = true;
+        } else {
+            alert("利率必須介乎0-100之間");
+        }
+    } else {
+        alert("請填妥所有欄位");
+    }
+    return output;
+}
+
+function checkNum(id) {
+    var input = document.getElementById(id).value;
+    var checkStr = input.match(/[^0-9.]/g);
+    var output = true;
+    if (checkStr != null) {
+        output = false;
+        alert("此欄只可輸入數字");
+        document.getElementById(id).value = input.substr( 0, (input.length-1) );
+    }
+	fillPrincipal();
+    return output;
+}
+
+function fillPrincipal(){
+	var price        = document.getElementById("price").value;
+	var mortgageRate = document.getElementById("mortgagerate").value;
+	//alert(document.getElementById("price").value);
+	if (price && mortgageRate) {
+		document.getElementById("principal").value	=	toFixedNum( price*(mortgageRate/100) );
+		//document.getElementById("principal").value =
+		//    Math.round( price * ( mortgageRate / 100 ) );
+	}else{
+		document.getElementById("principal").value	=	'請輸入樓價及成數';
+	}
+};
+    
+function toFixedNum(value) {
+    var num = new Number(value);
+    return num.toFixed(0);
+}
+//-->
+    
+</script>
+<script>
+	$(function() {
+		$( "#tabs" ).tabs();
+	});
+	//console.log(window.location.toString());
+</script>
+<script type="text/javascript">
+    function getval(sel) {
+		  var value =sel.value;
+          var ele=document.getElementById('ds');
+		  ele.innerHTML =value; 
+          
+    }
+</script>
+<div class="col-lg-12 banner"><h1>按揭計算</h1></div>
+<div class="clear"></div><br />
+<div id="mgFormWrap">
+  <form  action="" method=""  onsubmit="ajaxcal()">
+    <table cellpadding="2" >
+      <tr>
+        <td align="left" width="">樓價</td>
+        <td align="left" width="">$</td>
+        <td align="left" width="" class="email_input"><input  ng-change='calprincipal()'  ng-model='mor.price'
+											   tabindex="1" class="inputBox" /></td>
+        <td style="width: 10px;"></td>
+      </tr>
+      <tr>
+        <td align="left">按揭成數</td>
+        <td></td>
+        <td align="left" class="email_input"><input type='number' ng-model='mor.mortgagerate' ng-change='calprincipal()'
+											   tabindex="2" class="inputBox" /></td>
+        <td align="left">%</td>
+      </tr>
+      <tr align="left">
+        <td colspan="4" align="center" class="email_input">貸款額：　$
+          <input ng-model='mor.principal' 
+											   readonly="readonly"
+											   class="inputBox"
+											   style="border: 0px; font-size: 12pt; cursor: auto; background-color:#FFF; width:100px;" /></td>
+      </tr>
+      <tr>
+        <td align="left">利息</td>
+        <td></td>
+        <td align="left" class="email_input"><input ng-model='mor.rate' type='number'
+											   onkeyup="checkNum(this.id);"
+											   tabindex="3" class="inputBox" value="2.25"/></td>
+        <td align="left">%</td>
+      </tr>
+      <tr>
+        <td align="left">年期</td>
+        <td></td>
+        <td align="left" class="email_input"><input ng-model='mor.period' type='number'
+											   onkeyup="checkNum(this.id);"
+											   tabindex="4" class="inputBox" value="20"/></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="4"><br />
+          <!--input id="submitBtn" name="submitBtn" type="button" value="供款計算"  style="width:81px; vertical-align:bottom; " align="middle" -->
+          <img src="./images/btn_plan.png"  ng-click='getCal()' id="submitBtn" name="submitBtn" class='submit' style="cursor:pointer;width:80px;"onmouseover="this.src='./images/btn_plan.png'" onmouseout="this.src='./images/btn_plan.png'"/> &nbsp; <img src="./images/btn_detail_list.png" ng-click='showDetail()'
+            class='submit' style="cursor:pointer;width: 80px;"onmouseover="this.src='./images/btn_detail_list.png'" onmouseout="this.src='./images/btn_detail_list.png'"/>&nbsp;
+          <!--input type="button" onClick="clearForm();" value="清空表格"  style="width:81px;vertical-align:bottom;"  align="middle" /-->
+          <img src="./images/btn_set.png"  class='submit' style="cursor:pointer; width: 80px;"onmouseover="this.src='./images/btn_set.png'" ng-click='reset()' onmouseout="this.src='./images/btn_set.png'"/></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div id='roughTableWrap'> </div>
+<div id="detailTableWrap"></div>
+<div class="SD" style="clear:both; margin:0px 0 0px; background:#fff;">
+    <p style="float:left; margin-left:5px; font-size:16px;font-family:'微軟正黑體'; ">樓宇買賣印花稅表</p>
+    <table class="tax" width="100%" border="1">
+        <tbody><tr>
+        	<td colspan="2" align="center"><strong>物業買賣印花稅收費表</strong></td>
+        </tr>
+        <tr class="ss">
+        	<td width="50%">(適用於2013年2月23日或以後<br>取得之住宅及非住宅物業)</td>
+        	<td><strong>從價印花稅率<span style="font-size:16px; color:red;">(DSD)</span></strong></td>
+        </tr>
+        <tr class="gray2">
+        	<td>樓價不超於$2,000,000</td>
+        	<td>1.5%</td>
+        </tr>
+        <tr class="ss">
+        	<td>樓價$2,000,001至$2,176,470</td>
+        	<td>$30,000 + 超逾$2,000,000款額的20%</td>
+        </tr>
+        <tr class="gray2">
+        	<td>樓價$2,176,471至$3,000,000</td>
+        	<td>3%</td>
+        </tr>
+        <tr class="ss">
+        	<td>樓價$3,000,001至$3,290,330</td>
+        	<td>$90,000 + 超逾$3,000,000款額的20%</td>
+        </tr>
+        <tr class="gray2">
+        	<td>樓價$3,290,331至$4,000,000</td>
+        	<td>4.5%</td>
+        </tr>
+        <tr class="ss">
+        	<td>樓價$4,000,001至$4,428,580</td>
+        	<td>$180,000 + 超逾$4,000,000款額的20%</td>
+        </tr>
+        <tr class="gray2">
+        	<td>樓價$4,428,581至$6,000,000</td>
+        	<td>6%</td>
+        </tr>
+        <tr class="ss">
+        	<td>樓價$6,000,001至$6,720,000</td>
+        	<td>$360,000 + 超逾$6,000,000款額的20%</td>
+        </tr>
+        <tr class="gray2">
+        	<td>樓價$6,720,001至$20,000,000</td>
+        	<td>7.5%</td>
+        </tr>
+        <tr class="ss">
+        	<td>樓價$20,000,001至$21,739,130</td>
+        	<td>$1,500,000 + 超逾$20,000,000款額的20%</td>
+        </tr>
+        <tr class="gray2">
+        	<td>樓價$21,739,131或以上</td>
+        	<td>8.5%</td>
+        </tr>
+    </tbody></table>
+    
+	<table class="tax" width="100%" border="1" style="margin-top:50px;">
+    	<tbody><tr>
+        	<td width="50%">(現適用於香港永久性居民購入住宅物業及<br>在香港沒有擁有其他任何住宅物業)</td>
+            <td width="50%"><strong>從價印花稅率<span style="font-size:16px; color:red;">(SD)</span></strong></td>
+        </tr>
+    	<tr>
+        	<td>樓價不超於$2,000,000</td>
+            <td>$100</td>
+        </tr>
+        <tr class="gray2">
+        	<td>樓價$2,000,001至$2,351,760</td>
+        	<td>$100 + 超逾$2,000,000款額的10%</td>
+        </tr>
+        <tr class="ss">
+        	<td>樓價$2,351,761至$3,000,000</td>
+        	<td>1.5%</td>
+        </tr>
+        <tr class="gray2">
+        	<td>樓價$3,000,001至$3,290,320</td>
+        	<td>$45,000 + 超逾$3,000,000款額的10%</td>
+        </tr>
+        <tr class="ss">
+        	<td>樓價$3,290,321至$4,000,000</td>
+        	<td>2.25%</td>
+        </tr>
+        <tr class="gray2">
+        	<td>樓價$4,000,001至$4,428,570</td>
+        	<td>$90,000 + 超逾$4,000,000款額的10%</td>
+        </tr>
+        <tr class="ss">
+        	<td>樓價$4,428,571至$6,000,000</td>
+        	<td>3%</td>
+        </tr>
+        <tr class="gray2">
+        	<td>樓價$6,000,001至$6,720,000</td>
+        	<td>$180,000 + 超逾$6,000,000款額的10%</td>
+        </tr>
+        <tr class="ss">
+        	<td>樓價$6,720,001至$20,000,000</td>
+        	<td>3.75%</td>
+        </tr>
+        <tr class="gray2">
+        	<td>樓價$20,000,001至$21,739,120</td>
+        	<td>$750,000 + 超逾$20,000,000款額的10%</td>
+        </tr>
+        <tr class="ss">
+        	<td>(樓價$21,739,121或以上)</td>
+        	<td>4.25%</td>
+        </tr>
+        <!--<tr class="gray2">
+        	<td colspan="2"></td>
+        </tr>-->
+        </tbody></table>
+        
+        
+    
+    <div style="margin-top:10px;font-family:'微軟正黑體'; font-size:14px;">    			  *註：若香港永久性居民購入住宅物業純屬轉換居所，並於6個月內售出他唯一的另一個住宅物業，買家可向稅務局申請退還部份印花稅(相當於新舊印花稅差額)，但須符合稅務局之特定條件，並一概以稅務局決定為準。
+    </div>
+    
+    <div style="margin-top:50px;">
+    	<table border="1" class="tax">
+    		<tbody><tr class="ss">
+    			<td align="center" colspan="3"><strong>額外印花稅收費(SSD)</strong></td>
+    		</tr>
+    		<tr class="ss">
+    			<td width="33%"><strong>於下述期內出售/轉讓住宅物業</strong></td>
+                <td width="33%"><strong>適用於在2010年11月20日至2012年10月26日期間獲取的住宅物業：</strong></td>
+    			<td width="33%"><strong>適用於在2012年10月27日或以後獲取的住宅物業：</strong></td>
+    		</tr>
+    		<tr class="ss">
+    			<td>6個月或以內</td>
+    			<td>15%</td>
+                <td>20%</td>
+    		</tr>
+    		<tr class="ss">
+    			<td>超過6個月至12個月或以內</td>
+    			<td>10%</td>
+                <td>15%</td>
+    		</tr>
+    		<tr class="ss">
+    			<td>超過12個月至24個月或以內</td>
+    			<td>5%</td>
+                <td>10％</td>
+    		</tr>
+    		<tr class="ss">
+    			<td>超過24個月至36個月或以內</td>
+    			<td>-</td>
+                <td>10%</td>
+    		</tr>
+    	</tbody></table>    		
+    </div>
+    
+    
+    <div style="margin-top:50px;">
+    	<table border="1" width="100%" class="tax">
+    		<tbody><tr class="ss">
+    			<td colspan="2" align="center"><strong>買家印花稅收費(BSD)</strong></td>
+    		</tr>
+    		<tr class="ss">
+    			<td><strong>適用人士</strong></td>
+    			<td><strong>稅率</strong></td>
+    		</tr>
+    		<tr class="ss">
+    			<td>所有非香港永久性居民或以公司名義購買住宅物業之人士</td>
+    			<td>15%</td>
+    		</tr>
+    	</tbody></table>
+        
+    </div>
+    
+    </div>
+<div class="clear"></div><br />
+<?php  
+	$pageContent = ob_get_clean();
+	$pageTitle = "按揭計算";
+	include("master.php");
+?>

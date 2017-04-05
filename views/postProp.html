@@ -1,0 +1,93 @@
+<div class="col-lg-12 banner"><h1>網上委託</h1></div>
+<div class="clear"></div>
+  <div class="postAlertBox">
+  »請提供一些樓盤資料，並張貼在我們的網頁上
+  </div>
+  <div class="clear"></div>
+  <div style="background:#efefef; padding:30px 0;">
+    <form name='emailForm' ng-controller='emailCtrl' class="postPropForm">
+      <div class="col-md-10 col-md-offset-0"  style="padding:0; float:right">
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» 物業地址: </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <input ng-model='emailParams.address' type="text" name="building" id="building" maxlength="30" value="" class="inputBox form-control" size="35" style="padding:0px;width: 50%;" >
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» 物業建築面積: </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <input  ng-model='emailParams.area'type="text" name="area" id="area" maxlength="10" value="" class="inputBox form-control"  size="35" style="padding:0px;width: 50%;float:left" >
+          呎 </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» 物業實用面積: </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <input  ng-model='emailParams.area'type="text" name="area" id="area" maxlength="10" value="" class="inputBox form-control"  size="35" style="padding:0px;width: 50%;float:left" >
+          呎 </div>
+        <!--div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» 分類: </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <select ng-model='emailParams.usage' id="usage1" style="padding:0px;width: 50%;" class="inputBox form-control">
+            <option value="工廈" selected>工廈</option>
+            <option value="屋苑">屋苑</option>
+            <option value="商舖">商舖</option>
+            <option value="村屋">村屋</option>
+            <option value="倉地">倉地</option>
+            <option value="農地">農地</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» 地域: </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <select ng-model='emailParams.district' name="district" id="district" class="inputBox form-control" style="padding:0px;width: 50%;">
+            <option value="" selected>--</option>
+            <option value="上水">上水</option>
+            <option value="粉嶺">粉嶺</option>
+            <option value="打鼓嶺">打鼓嶺</option>
+            <option value="沙頭角">沙頭角</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» 物業名稱: </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <input ng-model='emailParams.building' type="text" name="building" id="building" maxlength="30" value="" size="35" class="inputBox form-control" style="padding:0px;width: 50%;" >
+        </div-->
+        
+        
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» 放售價格: </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <input ng-model='emailParams.price' type="text" name="price" id="price" maxlength="10" value="" class="inputBox form-control" size="35" style="padding:0px;width: 50%;float:left" >
+          萬元 </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» 放租價格: </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input"  >
+          <input ng-model='emailParams.rent' type="text" name="rent" id="rent" maxlength="10" value="" class="inputBox form-control" style="padding:0px;width: 50%;" size="35">
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» 聯絡人:* </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <input ng-model='emailParams.contact' type="text" name="contact" id="contact" maxlength="20" class="inputBox form-control" size="35" style="padding:0px;width: 50%;" required>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» 聯絡電話:* </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <input ng-model='emailParams.phone1' type="text" name="building" id="building" maxlength="30" value="" class="inputBox form-control" size="35" style="padding:0px;width: 50%;" >
+        </div> 
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» Email:* </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <input ng-model='emailParams.email' type="email" name="email" id="email" value="" class="inputBox form-control" size="35"style="padding:0px;width: 50%;">
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» 傳真號碼: </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <input ng-model='emailParams.phone2' type="text" name="phone2" id="phone2" maxlength="30" value="" class="inputBox form-control" size="35" style="padding:0px;width: 50%;" >
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">» 備註: </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <textarea ng-model='emailParams.description' name="description" class="inputBox form-control" id="description" maxlength="20" style="padding:0px;width: 50%;" ></textarea>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 postProp_title">»上傳圖片: </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 email_input">
+          <input ng-model='emailParams.file' ngf-select='true' type="file" name="file1" id="photo" maxlength="20" value="" class="inputBox form-control" size="35"style="padding:0px;width: 50%;">
+        </div>
+        
+        
+        <div class="col-md-3 col-md-offset-3 col-sm-3 col-xs-3">
+          <button class='email_contactBtn ' ng-class="{'email_sendingBtn':sending}" data-loading-text='' type="" ng-click='sendWithFile()' value=""></button>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3" style='cursor:pointer'>
+          <img class="img-responsive" src="images/btn_clear.png" style="width:100px" ng-click='reset()'></img>
+        </div>
+      </div>
+    </form>
+</div>
+<div class="clear"></div><br />

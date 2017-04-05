@@ -1,0 +1,28 @@
+<div class='table-responsive' ng-controller='transResultCtrl'>
+    <table class='table   table-striped table-hover bg_table'  >
+        <tr class="bg_header">
+            <td width='12%'>成交日期</td>
+            <td width='5%'>用途</td>
+            <td width='7%'>區域</td>
+            <td width='25%'>屋苑／大廈／街道</td>
+            <td width='7%'>樓層</td>
+            <td width='7%'>單位</td>
+            <td width='10%'> 建築面積</td>
+            <td width='10%'>實用面積</td>
+            <td width='10%'>成交價</td>
+            <td width='10%'>呎價</td>
+            
+       <tr ng-repeat="tran in trans" ng-click="setSelected($index);">
+        <td >{{tran.TRANS_DATE}}</td>
+        <td>{{tran.USAGE}}</td>
+        <td>{{tran.DISTRICT}}</td>
+        <td>{{tran.FULLADDR}}</td>
+        <td>{{tran.FLOOR}}</td>
+        <td>{{tran.UNIT}}</td>
+        <td>{{tran.GFA}}</td>
+        <td>{{tran.NFA}}</td>
+        <td>{{tran.PRICE}}</td>
+        <td>{{tran.AVGGFA}}</td>
+    </tr>
+    </table>
+</table>

@@ -1,0 +1,49 @@
+<form name='emailForm' ng-controller='emailCtrl'>
+  <div>
+    <div class='row'>
+      <div class="col-md-3 email_title">姓名* </div>
+      <div class="col-md-9 email_input">
+        <div class="form-group has-feedback" ng-class="{false:'has-error',true:'has-success'}[emailForm.name.$valid]">
+          <input type="text" class="txt form-control" name="name" ng-model='emailParams.name' required   >
+          <span class="glyphicon glyphicon-ok form-control-feedback" ng-class="{false:'glyphicon-remove',true:'glyphicon-ok'}[emailForm.name.$valid]"></span> </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class="col-md-3 email_title">電郵地址* </div>
+      <div class="col-md-9 email_input">
+        <div class="form-group has-feedback" ng-class="{false:'has-error',true:'has-success'}[emailForm.email.$valid]">
+          <input type="email" class="txt form-control" name="email" ng-model='emailParams.email' required   >
+          <span class="glyphicon glyphicon-ok form-control-feedback" ng-class="{false:'glyphicon-remove',true:'glyphicon-ok'}[emailForm.email.$valid]"></span> </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class="col-md-3 email_title">聯絡電話* </div>
+      <div class="col-md-9 email_input">
+        <div class="form-group has-feedback" ng-class="{false:'has-error',true:'has-success'}[emailForm.contact_no.$valid]">
+          <input type="text" name='contact_no' class="txt form-control" ng-model='emailParams.contact_no' required   >
+          <span class="glyphicon glyphicon-ok form-control-feedback" ng-class="{false:'glyphicon-remove',true:'glyphicon-ok'}[emailForm.contact_no.$valid]"></span> </div>
+      </div>
+    </div>
+    <div class='row'> 
+        <div class="col-md-3 email_title">訊息</div>
+        <div class="col-md-9 email_input">
+          <textarea name="msg" class='form-control' ng-model='emailParams.msg' ></textarea>
+        </div>
+     </div>
+     <!--div class='row'>
+      <div class="col-md-3 email_title">要求: </div>
+      <div class="col-md-9 email_input">
+        <input type="checkbox" name="request1" ng-model='emailParams.request1' >
+        我想預約睇樓
+        <p>
+          <input type="checkbox" name="request2" ng-model='emailParams.request2' >
+          我想睇更多室內相片</p>
+      </div>
+    </div-->
+    <div class='row'>
+      <div class="col-md-6 " style='max-height:50px'>
+        <button class='email_contactBtn ph_submitBtn' ng-class="{'email_sendingBtn':sending}" data-loading-text='' type="" ng-click='send()' value="">
+      </div>
+    </div>
+  </div>
+</form>

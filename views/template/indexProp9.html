@@ -1,0 +1,27 @@
+<div
+  ng-init="initSearch=
+  {limit:9,indextype:'template2'}
+"
+></div>
+<div class='col-lg-4 col-md-4 col-sm-4 col-xs-6' ng-repeat="indexProp in indexProps" style="padding-bottom:20px;">
+  <div class="index_box" >         
+   <div class="index_pic">
+    <img src="{{base.thumbImage}}{{indexProp.PHOTONUM}}" class='img-responsive' style='max-height:150px'>           
+     </div>
+     <div class="index_title">{{indexProp.PREMISES}}</div>           
+     <div class="index_det">           
+                          
+          <div class='col-lg-6 noPadding'>面積：</div><div class='col-lg-6'>{{indexProp.AREA}}呎</div>
+          <div class='col-lg-6 noPadding'>售：</div><div class='col-lg-6'>${{indexProp.PRICE |currencyunit:{unit:'萬',
+                    moneyformat:true,
+                    empty:'---'}
+                                                            }}</div>            
+                  
+      </div>           
+      <!--div class="index_detail_btn">             
+        <a href="#">              
+          <img ng-src="images/propDet.png" width="56" height="23" style="height: 23px; width: 56px;">             
+        </a>          
+        </div-->                    
+  </div>
+</div>

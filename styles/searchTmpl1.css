@@ -1,0 +1,23 @@
+#ph_resetBtn{
+  width: 91px;
+  height: 25px;
+  background: url(../images/reset1_2.png);
+  border: 0;
+  cursor: pointer;
+  
+}
+@media (min-width: 430px){
+  #ph_resetBtn{
+
+  margin-left: 30px
+}
+}
+#ph_submitBtn{
+  width: 91px;
+  height: 25px;
+  background: url(../images/search_2.png);
+  border: 0;
+  cursor: pointer;
+  
+  float:right;
+}

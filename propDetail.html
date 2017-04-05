@@ -1,0 +1,114 @@
+<!doctype html>
+<html class="no-js" ng-app="nodejsApp">
+  <head>
+    
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="">
+   
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link  rel="stylesheet" href="bower_components/angularjs-slider-master/rzslider.css"/>
+    <link  rel="stylesheet" href="bower_components/jquery-ui/jquery-ui.min.css"/>
+    <link  rel="stylesheet" href="styles/jcarousel.css"/>
+	<link  rel="stylesheet" href="bower_components/angular-table/ng-table.min.css"/>
+    <link  rel="stylesheet" href="bower_components/colorbox/colorbox.css"/>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/indexProp.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <!--<link rel="stylesheet" href="styles/nonResponsive.css">-->
+    <!--<link rel="stylesheet" href="styles/responsive.css">-->
+    <link rel="stylesheet" href="styles/base.css">
+
+    
+     <responsive-meta responsive=1></responsive-meta>
+     <responsive-css responsive=1></responsive-css>
+
+    <!-- endbuild -->
+  </head>
+  <body ng-controller='MainCtrl'>
+
+
+    <div class="view_change" ui-view='' style='background-color:white;width:1000px'></div>
+   
+
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery.ui.touch-punch.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-ui-router/angular-ui-router.js"></script>
+    <script src="bower_components/angular-table/ng-table.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular-ui/ui-bootstrap-tpls-0.13.0.min.js"></script>
+    <script src="bower_components/angularjs-slider-master/rzslider.js"></script>
+    <script src="bower_components/angular-slider/slider.js"></script>
+    <script src="bower_components/angular-storage/ngStorage.min.js"></script>
+    <script src="bower_components/jcarousel-master/jquery.jcarousel.min.js"></script>
+    <script src="bower_components/angular-uploadFile/ng-file-upload-shim.min.js"></script>
+    <script src="bower_components/angular-uploadFile/ng-file-upload-all.min.js"></script>
+    <script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="http://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script>   
+    <!-- endbower -->
+    <!-- endbuild --> 
+        
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/propDetail.js"></script>
+        <script src="scripts/function.js"></script>
+        <script src="scripts/factory/baseURL.js"></script>
+        <script src="scripts/factory/api.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        
+        
+        
+        <script src="scripts/controllers/property.js"></script>
+        <script src="scripts/controllers/search.js"></script>
+        <script src="scripts/controllers/pagination.js"></script>
+        <script src="scripts/controllers/adv.js"></script>
+        <script src="scripts/controllers/email.js"></script>
+        <script src="scripts/controllers/transaction.js"></script>
+
+        <script src="scripts/directive/responsive.js"></script>
+        <script src="scripts/directive/carousel.js"></script>
+        
+        
+        <!--Sub control-->
+        <script src="scripts/controllers/sub/dialog.js"></script>
+
+        <!-- endbuild -->
+          <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/service/adv.js"></script>
+        <script src="scripts/service/property.js"></script>
+        <script src="scripts/service/news.js"></script>
+        <script src="scripts/service/district.js"></script>
+        <script src="scripts/service/email.js"></script>
+        <script src="scripts/service/transaction.js"></script>
+
+		<script src="scripts/service/usage.js"></script>
+        <script src="scripts/filter/currency.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

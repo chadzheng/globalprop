@@ -1,0 +1,21 @@
+<div class='col-lg-4 col-md-4 col-sm-4 col-xs-6' ng-repeat="indexProp in indexProps">
+  <div class="index_box" >           
+  <div class="index_title">舖位部</div>          
+   <div class="index_pic">
+    <img src="{{base.thumbImage}}{{indexProp.PHOTONUM}}" class='img-responsive' style='max-height:150px'>           
+     </div>           
+     <div class="index_det">           
+        <ul>             
+          <li class="buil_name"></li>                   
+          <li>面積：{{indexProp.AREA}}呎</li>                   
+          <li>售：{{indexProp.PRICE |currencyunit:'千':true}}</li>                   
+          <li>租：{{indexProp.RENT |currencyunit:'K':true}}</li>            
+        </ul>           
+      </div>           
+      <div class="index_detail_btn">             
+        <a href="#">              
+          <img ng-src="images/propDet.png" width="56" height="23" style="height: 23px; width: 56px;">             
+        </a>          
+        </div>                    
+  </div>
+</div>

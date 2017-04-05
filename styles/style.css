@@ -1,0 +1,443 @@
+@charset "utf-8";
+body {
+	font-family: "微軟正黑體";
+	color:#666;	
+}
+ul {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+ul.left {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+ul.left li {
+	padding:0 0 10px 0;
+	margin:0;
+}
+img {
+	width: 100%;
+}
+a {
+	border:none;
+}
+.banner {
+	background:#efefef;
+	border:1px solid #999;
+	color:#666;
+	font-family: "微軟正黑體";
+	height:40px;
+	margin-bottom:10px;
+}
+h1 {
+	margin:0;
+	padding:0;
+	font-size:18px;
+	line-height:40px;
+	font-weight:bold;
+}
+.header_slide {
+	padding:10px 0;
+	background:#e5370f;
+	color:#fff;
+	margin-bottom:15px;
+	display:block;	
+}
+.border_title{
+	color:#cf0076;
+	font-size:18px;
+	font-weight:bold;
+	padding-bottom:10px;
+	display:block;
+	border-bottom:1px solid #cf0076;
+	margin:0;
+	padding:0;
+}
+.border_title_bg{
+	color:#004405;
+	font-size:18px;
+	font-weight:bold;	
+}
+.line{
+	border-bottom:1px solid #004405;
+}
+/* bootstamp*/
+.pagination {
+	float:right;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+	z-index: 2;
+	color: #fff;
+	cursor: default;
+	background-color: #79BD28;
+	/*border: 1px #000 solid;*/
+}
+.pagination > li > a, .pagination > li > span {
+	color:#000;
+	border: 1px #fff solid;
+}
+.navbar-default .navbar-nav > li > a {
+	color:#fff;
+	font-size:18px;
+	font-weight:bold;	
+}
+.pagination-sm > li:first-child > a, .pagination-sm > li:first-child > span {
+	border: 1px #fff solid;
+}
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+	border: 1px #fff solid;
+}	
+.navbar-collapse.collapse {
+	background:#004405;
+}
+
+/* .news start*/
+.news {
+	border:5px solid #e5360e;
+	height:350px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	display:block;
+	font-family:"微軟正黑體";
+	margin-bottom:20px;
+}
+.news_title {
+	color:#e5360e;
+	font-size:18px;
+	text-align:center;
+	background-image:url(../images/bg_home.jpg);
+	background-repeat:no-repeat;
+	height:30px;
+	margin-top:10px;
+	font-weight:bold;
+}
+.news_place {
+	color:#e74e07;
+	text-align:center;
+	font-size:14px;
+	padding: 5px 0 5px 0;
+}
+.news_detail {
+	width: 150px;
+	margin: 0 auto;
+}
+span.update {
+	font-size:12px;
+}
+.news_img {
+	max-width: 400px;
+	margin: 0 auto;
+}
+.news_bottom {
+	bottom: -170px;
+	position: relative;
+}
+.new_info {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.new_info_tb1 {
+	border: 1px solid #e5e5e5;
+}
+.new_info_tb2 {
+	border: 1px solid #e5e5e5;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	border-top-left-radius: 10px;
+	background:#06aae5;
+	color:#fff;
+}
+.new_info_tb3 {
+	border: 1px solid #e5e5e5;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-left-radius: 10px;
+	background:#eb632d;
+	color:#fff;
+}
+.new_info_tb4 {
+	border: 1px solid #e5e5e5;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-right-radius: 10px;
+}
+.new_info_tb5 {
+	border: 1px solid #e5e5e5;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-bottom-right-radius: 10px;
+}
+.news_info_title {
+	font-size:18px;
+	background-image:url(../images/bg_home_w.png);
+	background-repeat:no-repeat;
+	height:30px;
+	margin:10px 0;
+	font-weight:bold;
+}
+span.info_title {
+	margin-left:60px;
+}
+/* .recruit start*/
+h2.recruit_sub {
+	margin:0;
+	padding:0;
+	color:#e5360e;
+	font-size:24px;
+	font-weight:bold;
+}
+h2.recruit_sub_name {
+	margin:0;
+	padding:0;
+	color:#e84f07;
+	font-size:24px;
+	font-weight:bold;
+}
+ul.recruit_ul {
+	list-style:disc;
+	padding-left: 20px;
+}
+.all_tb {
+	border:3px solid #d6d6d6;
+	padding:0;
+	color:#fff;
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+}
+.tb1 {
+	background:url(../images/bg_tb1.jpg);
+	border-right:2px solid #d6d6d6;
+	padding:10px 0;
+}
+.tb2 {
+	background:url(../images/bg_tb2.jpg);
+	padding:10px 0;
+}
+.tb3 {
+	background:url(../images/bg_tb3.jpg);
+	padding:10px 0;
+	border-top:2px solid #d6d6d6;
+}
+span.recruit_title {
+	font-size:18px;
+}
+/* .aboutUs start*/
+.aboutUs{
+	background:#efefef;
+	min-height:500px;
+	font-size:16px;
+}
+p.map_p {
+	margin:20px;
+	font-size:24px;
+}
+p.map_p_grey {
+	font-size:18px;
+}
+p.email {
+	text-align:center;
+	font-weight:bold;
+	margin:20px;
+}
+.email_title {
+	text-align:left;
+	font-weight: bold;
+	margin-bottom:10px;
+}
+.email_input {
+	padding-bottom:10px;
+}
+.email_contactBtn {
+	width: 110px;
+	height: 30px;
+	background: url(../images/btn_contact.png) no-repeat;
+	border: 0;
+	cursor: pointer;
+}
+.email_sendingBtn {
+	background: url(../images/btn_send.png) no-repeat;
+}
+.email_clearBtn {
+	width: 110px;
+	height: 30px;
+	background: url(../images/btn_clear.png) no-repeat;
+	border: 0;
+	cursor: pointer;
+	margin-left: 30px;
+}
+h2.aboutUs_sub{
+	color:#ee319b;
+	font-size:18px;
+	padding:0;
+	margin:0;
+	font-weight:bold;
+}
+/* .postProp start*/
+.postProp_header {
+	border:3px solid #e74e07;
+	color:#e74e07;
+	padding:5px;
+}
+.postProp_title {
+	/*text-align:right;*/
+	margin-bottom:10px;
+	color:#555;
+}
+.postPropForm{    
+    margin: 0 auto;
+    font-weight: bold;
+    border: 1px dashed #393240;
+	width:80%;
+	height:550px;
+	padding-top:15px;
+}
+.postAlertBox {
+    margin-bottom: 10px;
+    border: 2px #79BD28 solid;    
+    padding: 10px;
+    font-size: 14px;
+    font-family: "微軟正黑體";
+}
+/*property start*/
+.dist_btn {
+	background-image: url(../images/dist_btn.png);
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	line-height: 25px;
+	background-size: 100% 100%;
+	margin-top:10px;
+}
+.usage_btn {
+	background-image: url(../images/usage_btn.png);
+	background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	line-height: 25px;
+	margin-top:10px;
+}
+/*transaction start*/
+tr.bg_header {
+	background:#004405 !important;
+	color:#fff;
+}
+.bg_table {
+	border:2px solid #004405;
+}
+/*mortgage start*/
+.m_tb {
+	padding:0;
+	border:1px solid #666;
+	text-align:center;
+}
+.m_tb_0 {
+	padding:0;
+	border:1px solid #666;
+}
+span.text {
+	font-size:10px;
+}
+.carousel-indicators{
+	display:none;
+}
+/*button*/
+.s8link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+    transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: rgba(216, 27, 94, 1) url(../images/shiny1button_bg.png) 50% 50% repeat-x;
+    border: solid rgba(85, 85, 85, 1) 0px;
+    cursor: pointer !important;
+	color:#fff;
+	font-size:18px;
+	text-align:center;
+}
+/*contact start*/
+.contact_all p{
+	margin:0;
+	padding-left: 0px;
+}
+.contact_title{
+	font-size:18px;
+	font-family:標楷體;
+	color: #000;
+	font-weight:bold;
+}
+.contact_subtitle{
+	font-size:14px;
+	font-family:新細明體;
+	color: #000;
+	font-weight:bold;
+}
+.contact_subtitle_en{
+	font-size:14px;
+	font-family:Arimo;
+	color: #000;
+	font-weight:bold;
+}
+.contact_div_all{
+	padding: 0px;
+}
+.company_name {
+    color: #004405;
+    margin-bottom: 5px;
+	margin-top:15px;
+}
+.contact_us_desc {
+    padding: 20px 0;    
+    font-size: 12px;
+    font-family: '微軟正黑體';
+}
+/*link start*/
+#link img{
+	width:auto;
+}
+#link a {display:block;}
+#link table td{ background:#FFF; text-align:center;font-size:12px;}
+/*prop_news start*/
+.prop_news_cont {
+    clear: both;
+    font-family: "微軟正黑體";   
+    padding: 5px 5px 0 5px;
+    border-top: 2px #de185a solid;
+	line-height: 18px;
+}
+.prop_news_title {
+    color: #6E4314;
+    margin-bottom: 5px;
+}
+/*adv start*/
+.adv_img img{
+	padding-bottom:10px;	
+}
+/*greenText start */
+.greenText a{
+	text-align:right;
+	color:#79BD28;
+	font-weight:700;
+}
+.noPadding{
+	padding:0;
+}
+.sideSearch_title {
+    font-size: 16px;
+    background-color:#004405;
+	border:5px solid #004405;
+}
+/* seach btn */
+#ph_submitBtn {
+    width: 91px;
+    height: 25px;
+    background: url(../images/search_2.png);
+    border: 0;
+    cursor: pointer;
+    float: right;
+}

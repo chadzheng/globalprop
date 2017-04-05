@@ -1,0 +1,70 @@
+<div class="col-md-12 banner">
+  <h1>代客估價</h1>
+</div>
+<div class="clear"></div>
+<div class="col-md-12" style="padding:0">
+  <div class="postProp_header">»請提供一些樓盤資料，並張貼在我們的網頁上</div>
+  <br>  
+  <form name='emailForm' ng-controller='emailCtrl'>
+    <div class="col-md-10 col-md-offset-2"  style="padding:0">
+      <div class="col-md-3 postProp_title">» 物業地址: </div>
+      <div class="col-md-9 email_input">
+        <input ng-model='emailParams.building' type="text" name="address" id="building" maxlength="30" value="" class="inputBox" size="35">
+      </div>
+      <div class="col-md-3 postProp_title">» 單位面積: </div>
+      <div class="col-md-9 email_input">
+        <input ng-model='emailParams.area' type="text" name="area" id="area" maxlength="10" value="" class="inputBox" onkeyup="replaceNonNumber(this.id)" size="35">
+        呎 </div>
+      <div class="col-md-3 postProp_title">» 放盤價格: </div>
+      <div class="col-md-9 email_input">
+        <input type="text" ng-model='emailParams.price' name="price" id="price" maxlength="10" value="" class="inputBox" onkeyup="replaceNonNumber(this.id)" size="35">
+        萬元 </div>  
+      <div class="col-md-3 postProp_title">» 聯絡人: </div>
+      <div class="col-md-9 email_input">
+        <input type="text" ng-model='emailParams.contact' name="contact" id="contact" maxlength="20" class="inputBox" size="35">
+      </div>
+      <div class="col-md-3 postProp_title">» 聯絡電話(主要): </div>
+      <div class="col-md-9 email_input">
+        <input type="text" name="phone1" id="building" maxlength="30" value="" class="inputBox" size="35">
+      </div>
+      <div class="col-md-3 postProp_title">» Email: </div>
+      <div class="col-md-9 email_input">
+        <input type="email" ng-model='emailParams.email' name="email" id="phone2" value="" class="inputBox" size="35">
+      </div>  
+      <div class="col-md-3 postProp_title"></div>
+     
+      <div class="col-md-3"><button class='email_contactBtn ' ng-class="{'email_sendingBtn':sending}" data-loading-text='' type="" ng-click='send()' value=""></div>
+      <div class="col-md-3"><a href="#"><img class="img-responsive" src="images/btn_clear.png" style="width:100px"></a></div>
+    </div>
+  </form>
+
+</div>
+<div class="clear"></div>
+<div class="col-md-12">
+<div align="center" style="font-size:14px; padding-top:20px;">
+							<p>請點擊以下連結，網頁會在新視窗打開</p>
+							<table border="0" cellspacing="10" cellpadding="0" bgcolor="#FFFFFF">
+								<tbody><tr>
+									<td><a href="http://www.hsbc.com.hk/1/2/chinese/hk/mortgages/valuation?pwscmd=cmd_init" target="_blank"><img src="images/bank/hsbc.gif" border="0" class="photo_border"></a></td>
+								</tr>
+                                <tr>
+									<td><a href="http://evalue.hangseng.com/chi/" target="_blank" class="style12"><img src="images/bank/hs.gif" width="393" height="52" border="0" class="photo_border"></a></td>
+								</tr>
+								<tr>
+									<td><a href="http://www.bochk.com/tc/mortgage/tools.html" target="_blank"><img src="images/bank/boc.gif" width="393" height="74" border="0" class="photo_border"></a></td>
+								</tr>
+                                <tr>
+									<td><a href="http://apps.standardchartered.com/public_website/hongkong/mortgage-planner/zh/valuation-disclaimer.html?pid=borrow_property_valuation_zh" target="_blank"><img src="images/bank/sc.gif" width="393" height="74" border="0" class="photo_border"></a></td>
+								</tr>																
+								<tr>
+									<td align="center"><a href="http://www.bankcomm.com.hk/tw/tools/calculators0104.html" target="_blank"><img src="images/bank/bankcomm.gif" width="393" height="52" border="0" class="photo_border"></a></td>
+								</tr>
+								<tr>
+									<td align="center"><a href="https://online.asia.ccb.com/PersonalHKWeb/servlet/EvaluationServlet?reqTrx=eValRequest&amp;Lang=Big5&amp;CalledFrom=LoanIndex" target="_blank"><img src="images/bank/ccb.gif" width="393" height="52" border="0" class="photo_border"></a></td>
+								</tr>
+								<tr>
+									<td><a href="https://ww2.hkbea-cyberbanking.com/servlet/FR061Show?Lang=Big5&amp;Channel=INTERNET" target="_blank" class="style12"><img src="images/bank/bea.gif" width="393" height="52" border="0" class="photo_border"></a></td>
+								</tr>
+							</tbody></table>
+							</div>
+</div>

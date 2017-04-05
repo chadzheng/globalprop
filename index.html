@@ -1,0 +1,327 @@
+<!doctype html>
+<html class="no-js" ng-app="nodejsApp">
+<head>
+<meta charset="UTF-8">
+<title>Global Property Ltd.</title>
+<meta name="description" content="">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!-- build:css(.) styles/vendor.css -->
+<!-- bower:css -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+<link  rel="stylesheet" href="bower_components/angularjs-slider-master/rzslider.css"/>
+<link  rel="stylesheet" href="bower_components/jquery-ui/jquery-ui.min.css"/>
+<link  rel="stylesheet" href="styles/jcarousel.css"/>
+<link  rel="stylesheet" href="bower_components/angular-table/ng-table.min.css"/>
+<link  rel="stylesheet" href="bower_components/angular-ngprogress/ngProgress.css"/>
+<link  rel="stylesheet" href="bower_components/colorbox/colorbox.css"/>
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:css(.tmp) styles/main.css -->
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/indexProp.css">
+<link rel="stylesheet" href="styles/style.css">
+<!--<link rel="stylesheet" href="styles/nonResponsive.css">-->
+<!--<link rel="stylesheet" href="styles/responsive.css">-->
+<link rel="stylesheet" href="styles/base.css">
+<responsive-meta responsive=1></responsive-meta>
+<responsive-css responsive=1></responsive-css>
+<!-- endbuild -->
+</head>
+<body ng-controller='MainCtrl'>
+<!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+<div class="bg1"></div>
+<div class="bg2"></div>
+<div>
+<div class='container'>
+  <div  ng-include="'./views/sub/banner.html'"> </div>
+</div>
+<!-- Menu -->
+<div class="container noPadding" >
+  <nav class="navbar navbar-default">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span><span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="#"></a> 
+    </div>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav  navbar-nav pull-left">
+        <li ui-sref-active="active"><a ui-sref="index">主頁</a></li>
+        <li ui-sref-active="active"><a ui-sref="aboutUs">關於我們</a></li>
+        <li ui-sref-active="active"><a ui-sref="property">筍盤推介</a></li>
+        <li ui-sref-active="active"><a ui-sref="transaction">成交速遞</a></li>
+        <li ui-sref-active="active"><a ui-sref="postProp">網上委託</a></li>        
+        <li ui-sref-active="active"><a ui-sref="link">常用連結</a></li>
+        <li ui-sref-active="active"><a ui-sref="mortgage">常用工具</a></li>
+        <li ui-sref-active="active"><a ui-sref="contact">聯絡我們</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<!---left bar-->
+
+<div class="container">
+  <div class="col-lg-2 col-md-3  hidden-xs hidden-sm">
+    <!--
+  <ul class="left">
+    <li><a ui-sref="index"><img src="images/btn1.jpg"></a></li>
+    <li><a ui-sref="property" href="#"><img src="images/btn2.jpg"></a></li>
+    <li><a ui-sref='transaction' href="#"><img src="images/btn3.jpg"></a></li>
+    <li><a ui-sref="bankval" href="#"><img src="images/btn4.jpg"></a></li>
+    <li><a ui-sref="mortgage" href="#"><img src="images/btn5.jpg"></a></li>
+    <li><a ui-sref="postProp" href="#"><img src="images/btn6.jpg"></a></li>
+    <li><a ui-sref="aboutUs" href="#"><img src="images/btn7.jpg"></a></li>
+    <li><a ui-sref="recruit" href="#"><img src="images/btn8.jpg"></a></li>
+  </ul>
+-->
+  <!--div  ng-controller='advCtrl'>
+      <div  ng-repeat="adv in advs"> 
+        <div ng-if="!adv.URL">
+          <img ng-src="{{base.url}}/adImage.php?id={{adv.NUMBER}}" class="img-responsive" border="0" > 
+        </div>
+        <div ng-if="adv.URL">
+          <a href='http://{{adv.URL}}'><img ng-src="{{base.url}}/adImage.php?id={{adv.NUMBER}}" class="img-responsive" border="0" > </a>
+        </div>
+      </div>	  
+    </div-->
+    <div ng-controller='advCtrl'>
+    <div class="col-lg-12 noPadding sideSearch_title">
+    <div class="col-lg-12"><span style="color: white; ">快速搜尋</span></div>		
+    <div class="col-lg-12" style="background:#fff; color:#666;font-size: 14px;">
+    <div class="clear"></div><br>
+    <div class="col-lg-6 noPadding" ng-init="params.price_type=2"><button type="button" class="btn btn-lg" ng-class="{'btn-success':params.price_type == 2, 'btn-default':params.price_type == 1}" value= "2" ng-model='params.price_type' ng-click="params.price_type=2">出租</button></div>
+   	<div class="col-lg-6 noPadding"><button type="button" class="btn btn-lg" ng-class="{'btn-success':params.price_type == 1, 'btn-default':params.price_type == 2}" value= "1" ng-model='params.price_type' ng-click="params.price_type=1">出售</button></div>
+   	<div class="clear"></div><br>
+    用途 <select class='width-70' ng-init="params.chi_usage=params.chi_usage||'工廈'" ng-model='params.chi_usage'>
+        <option value='工廈' selected>工廈</option>
+        <option value='地廠'>地廠</option>
+        <option value='頂手舖'>頂手舖</option>
+        <option value='全幢'>全幢</option>
+        <option value='寫字樓'>寫字樓</option>
+        <option value='車位'>車位</option>
+        <option value='商舖'>商舖</option>
+      </select>
+    <div class="clear"></div><!--p>
+      <div class="col-lg-6 noPadding"><input type="radio" value="工廈" > 工廈</div><div class="col-lg-6 noPadding"><input type="radio" value="地廠" > 地廠</div></p>
+      <div class="clear"></div><p>
+      <div class="col-lg-6 noPadding"><input type="radio" value="頂手舖" > 頂手舖</div><div class="col-lg-6 noPadding"><input type="radio" value="全幢" > 全幢</div></p>
+      <div class="clear"></div><p>
+      <div class="col-lg-6 noPadding"><input type="radio" value="寫字樓" > 寫字樓</div><div class="col-lg-6 noPadding"><input type="radio" value="車位" > 車位</div></p>
+      <div class="clear"></div><p></p><p>
+      <input type="radio" value="商舖" > 商舖</p-->
+      <div class="clear"></div><br>
+    
+    地區 <input type="textbox" class='width-70'  name="district" ng-click='selectDist()' ng-model='districtText' readonly/>
+    <div class="clear"></div><br>
+
+    <!-- <input type="textbox" class='width-70'   name="building_name" ng-model='params.building_name' />
+    <div class="clear"></div><br-->
+    
+    面積 <select class='width-70' ng-init="area_range=area_range||'0-200'" ng-model='area_range'>
+        <option value='0-200' selected>1-200呎</option>
+        <option value='200-500'>200-500呎</option>
+        <option value='500-1000'>500-1000呎</option>
+        <option value='1000-2000'>1000-2000呎</option>
+        <option value='2000-5000'>2000-5000呎</option>
+        <option value='5000+'>5000呎以上</option>
+      </select>
+    <div class="clear"></div><br>
+
+    <div ng-class="{'show':params.price_type == 2, 'hidden':params.price_type == 1}">租金
+      <select class='width-70' ng-init="price_range=price_range||'0-3000'" ng-model='price_range'>
+        <option value='0-3000' selected>$3000以下</option>
+        <option value='3000-10000'>$3000-$10000</option>
+        <option value='10001-15000'>$10001-$15000</option>
+        <option value='15001-30000'>$15001-$30000</option>
+        <option value='30000+'>$30000以上</option>
+        
+      </select>
+	</div>
+    <div class="clear"></div>
+    <div ng-class="{'show':params.price_type == 1, 'hidden':params.price_type == 2}">售價 
+      <select class='width-70' ng-init="price_range=price_range||'0-1000000'" ng-model="price_range">
+        <option value='0-1000000'>$100萬以下</option>
+        <option value='1000001-2000000'>$100萬-$200萬</option>
+        <option value='2000001-5000000'>$200萬-$500萬</option>
+        <option value='5000001-10000000'>$500萬-$1000萬</option>
+        <option value='10000001-20000000'>$1000萬-$2000萬</option>
+        <option value='20000000+'>$2000萬以上</option>
+        
+      </select>
+	</div>
+	
+    <!--div class="clear"></div><br>
+    間隔<div class="clear"></div><p>
+    <div class="col-lg-6 noPadding"><input type="radio" value="kkk" > 內廁</div><div class="col-lg-6 noPadding"><input type="radio" value="kkk" > 貨倉</div></p>
+    <div class="clear"></div><p>
+    <div class="col-lg-6 noPadding"><input type="radio" value="kkk" > 有窗</div><div class="col-lg-6 noPadding"><input type="radio" value="kkk" > 貨台</div></p>
+    <div class="clear"></div><p>
+    <div class="col-lg-6 noPadding"><input type="radio" value="kkk" > 半倉寫</div><div class="col-lg-6 noPadding"><input type="radio" value="kkk" > 入柜</div></p>
+    <div class="clear"></div><p></p><p>
+    <input type="radio" value="kkk" > 特色平台</p>
+    <div class="clear"></div><br>
+    面積
+      <select class='width-70'>
+        <option vlaue='0-200'>1-200呎</option>
+        <option vlaue='200-500'>200-500呎</option>
+        <option vlaue='500-1000'>500-1000呎</option>
+        <option vlaue='1000-2000'>1000-2000呎</option>
+        <option vlaue='2000-5000'>2000-5000呎</option>
+        <option vlaue='5000+'>5000呎以上</option>
+        
+        
+        
+      </select-->
+    <div class="clear"></div><br>
+    <div>        
+        <button id="ph_submitBtn" type="" ng-click='propertyQuickSearch()' value=""/>        
+      </div>
+    </div>    
+		</div>
+   <div class="clear"></div><br>
+   <div class="col-lg-12 noPadding sideSearch_title">
+		<div class="col-lg-12"><span style="color: white; ">最新成交</span></div>		
+		<div class="col-lg-12" style="background:#fff; color:#666;font-size: 14px;" ng-repeat="tran in trans|limitTo:2">
+		<span style="font-size: 12px; font-weight: 700;">{{tran.TRANS_DATE}}</span>
+		<br>
+		{{tran.FULLADDR}}
+		<br>
+			<span style="color: #dc3232;">HK ${{tran.PRICE}}</span>
+			<br>
+			<div style="border-bottom: 1px solid #666;"></div>			
+		</div>	
+	</div>
+    <script type="text/ng-template" id="DistrictQuick.html">
+        <div class="modal-header">
+            <h3 class="modal-title">請選擇地區</h3>
+        </div>
+        <div class="modal-body row" >
+            <div class='col-md-3'>
+              <div class='row'>香港</div>
+              <div ng-repeat="district in districts|filter:{ZONE:'hk'}">
+                <input type='checkbox' ng-model='district.selected'></input>
+                {{district.C_DISTRICT}}
+
+              </div>
+            </div>
+             <div class='col-md-3'>
+              <div class='row'>九龍</div>
+              <div ng-repeat="district in districts|filter:{ZONE:'kln'}">
+                <input type='checkbox' ng-model='district.selected'></input>
+                {{district.C_DISTRICT}}
+
+              </div>
+            </div>
+            <div class='col-md-3'>
+              <div class='row'>新界</div>
+              <div ng-repeat="district in districts|filter:{ZONE:'nt'}">
+                <input type='checkbox' ng-model='district.selected'></input>
+                {{district.C_DISTRICT}}
+
+              </div>
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+	</div>
+</div>
+
+<div class="col-lg-10 col-md-9 col-sm-12   view_change" ui-view='' style='background-color:#fff'> </div>
+	<div style='clear:both'></div></div>
+<footer class="container footer clear" style=" background:#e7e7e7; margin-top:20px;color:#666;">
+  <p><a ui-sref="index">主頁</a> | <a ui-sref="aboutUs" href="#">關於我們</a> | <a ui-sref='property' href="#">筍盤推介</a> | <a ui-sref="transaction" href="#">成交速遞</a> | <a ui-sref="postProp" href="#">網上委託</a> | <a ui-sref="link" href="#">常用連結</a> | <a ui-sref="mortgage" href="#">常用工具</a> | <a ui-sref="contact" href="#">聯絡我們</a></p>
+  <div class="footer_text">
+    <p>本網頁內容所提供資料，僅作參考用途。若因錯漏而引致任何不便或損失，本網頁及本公司概不負責。</p>
+    <p>Copyright© 2017 Global Property Ltd. All rights reserved.</p>
+    <p>Designed by AST Business Solutions Limited.</p>
+  </div>
+</footer>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+<!-- build:js(.) scripts/oldieshim.js -->
+<!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+<!-- endbuild -->
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="bower_components/jquery-ui/jquery.ui.touch-punch.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-ui-router/angular-ui-router.js"></script>
+<script src="bower_components/angular-table/ng-table.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/angular-ui/ui-bootstrap-tpls-0.13.0.min.js"></script>
+<script src="bower_components/angularjs-slider-master/rzslider.js"></script>
+<script src="bower_components/angular-slider/slider.js"></script>
+<script src="bower_components/angular-storage/ngStorage.min.js"></script>
+<script src="bower_components/jcarousel-master/jquery.jcarousel.min.js"></script>
+
+<script src="bower_components/angular-uploadFile/ng-file-upload-all.min.js"></script>
+<script src="bower_components/angular-ngprogress/ngprogress.min.js"></script>
+<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+<script src="bower_components/jqSticky/jquery.sticky-kit.min.js"></script>
+
+<script src="http://maps.google.com/maps/api/js"></script>
+<script src="bower_components/ng-map.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/function.js"></script>
+<script src="scripts/factory/baseURL.js"></script>
+<script src="scripts/factory/api.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/index.js"></script>
+<script src="scripts/controllers/about.js"></script>
+<script src="scripts/controllers/contact.js"></script>
+<script src="scripts/controllers/property.js"></script>
+<script src="scripts/controllers/search.js"></script>
+<script src="scripts/controllers/pagination.js"></script>
+<script src="scripts/controllers/adv.js"></script>
+<script src="scripts/controllers/email.js"></script>
+<script src="scripts/controllers/transaction.js"></script>
+<script src="scripts/directive/responsive.js"></script>
+<script src="scripts/directive/carousel.js"></script>
+<!--Sub control-->
+<script src="scripts/controllers/sub/dialog.js"></script>
+<!-- endbuild -->
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/service/adv.js"></script>
+<script src="scripts/service/service.js"></script>
+<script src="scripts/service/property.js"></script>
+<script src="scripts/service/news.js"></script>
+<script src="scripts/service/district.js"></script>
+<script src="scripts/service/usage.js"></script>
+<script src="scripts/service/email.js"></script>
+<script src="scripts/service/transaction.js"></script>
+<script src="scripts/filter/currency.js"></script>
+<script src="scripts/service/service.search.js"></script>
+<!-- endbuild -->
+</body>
+</html>

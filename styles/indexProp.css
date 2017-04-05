@@ -1,0 +1,34 @@
+.index_title {	
+	background-size: 100% 100%;
+	color: #79bd28;		
+	font-size: 14px;
+	padding-top: 5px;	
+	font-weight: bold;
+}
+.index_box {
+	margin-bottom: 10px;
+}
+.index_pic img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height:170px;
+}
+.fcolor5{
+	background:#eee;
+}
+.fcolor4{
+	background:#dddddd;
+}
+.size1{
+	color: #393240;
+	font-size:12px;	
+}
+.text_color2{
+	color:#8c381e;
+	font-size:12px;	
+}
+.text_color3{
+	color:#cc731d;
+	font-size:18px;
+}

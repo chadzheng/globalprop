@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="styles/propDetail.css">
+<div class='row' ng-controller='propertyDtlCtrl'>
+  
+  <div class='row prop_tit' >
+	<div class='col-md-5 info_text'><strong>{{property.C_TITLE}}</strong></div>
+	<div class='info_text' style='float:right; padding:0 10px;'>網盤號碼:{{property.REFERENCE}}</div>
+  </div>
+  <div class='row pd_main'>
+  	<!---LEFT SIDE-->
+  	<div class="col-md-4">
+  		<table class='info_tab'>
+  			<tr>
+  				<td width='30%' class="td_head">物業地址:</td>
+  				<td width='70%'>{{property.C_PREMISES}}</td>
+  			</tr>
+  			<tr>
+  				<td class="td_head">地區:</td>
+  				<td>{{property.C_DISTRICT}}</td>
+  			</tr>
+  			<tr>
+  				<td class="td_head">建築面積:</td>
+  				<td>{{property.GAREA}}</td>
+  			</tr>
+
+  			<tr>
+  				<td class="td_head">實用面積:</td>
+  				<td>{{property.NAREA}}</td>
+  			</tr>
+  			<tr>
+  				<td class="td_head">放售價格:</td>
+  				<td>{{property.PRICE}}</td>
+  			</tr>
+  			<tr>
+  				<td class="td_head">放租價格:</td>
+  				<td>{{property.RENT}}</td>
+  			</tr>
+  			<tr>
+  				<td class="td_head">聯絡人:</td>
+  				<td class="info_special">{{property.C_CONTACT}}</td>
+  			</tr>
+  			<tr>
+  				<td class="td_head">聯絡電話:</td>
+  				<td class="info_special">{{property.CONTACTPHONE}}</td>
+  			</tr>
+  			<tr>
+  				<td class="td_head">營業員牌照:</td>
+  				<td>{{property.LICENCE}}</td>
+  			</tr>
+  			<tr>
+  				<td class="td_head">交易:</td>
+  				<td>{{property.C_POSSESSION}}</td>
+  			</tr>
+  			<tr>
+  				<td class="td_head">備註:</td>
+  				<td>{{property.C_REMARKS}}</td>
+  			</tr>
+  			
+  		</table>  		
+  		<div>
+  			<div>免責聲明 : </div>        
+  			<div style="margin-top:15px;font-size:11px;">以上資料僅供參考之用；本公司已盡力求證，但恕不擔保以上資料準確無誤，亦不承擔對任何人士因使用以上資料而導致損失的任何責任。</div>
+  		</div>
+  	</div>
+  	<!---MIDDLE SIDE-->
+  	<div class="col-md-4 pd_middle_cont">
+      <div style='' class='pd_pic_cont'>
+         <carousel interval="myInterval">
+          <slide ng-repeat="slide in property.SMALL_IMAGE_LIST" active="slide.active">
+            <img ng-src="{{base.thumbImage}}{{slide}}" class='img-responsive' style="margin:auto;">
+            
+          </slide>
+        </carousel>
+      </div>		
+      <div class='carousel12 pd_small_pic  jcarousel-skin-tango' style="margin:10px 0;">
+          <ul id="thumbImageList" >
+                  
+              <li  ng-repeat="slide in property.SMALL_IMAGE_LIST" carousel-element startClass='carousel12'>
+                <a color-box='{"maxHeight":"90%","maxWidth":"90%","photo":true}' class="small" href="{{base.thumbImage}}{{slide}}" rel="b">
+                  <img rel="" ng-src="{{base.thumbImage}}{{slide}}" class="pd_img img-responsive" width="70" height="70"/>
+                </a>
+              </li>
+            </ul>
+      </div>
+      <div class="info_outside">
+      <div class="info_title"><a href="#email_us">電郵聯絡我們</a></div>
+      <div ng-include="'views/sub/contactUs.html'">
+      </div>
+      </div>
+  	</div>
+  	<!---RIGHT SIDE-->
+  	<div class="col-md-4">
+  		<map zoom="11" center="{{property.C_GOOGLEMAP_ADDR}}" >
+		    <street-view-panorama container="streetview"></street-view-panorama>
+  		</map>
+		<div style='height:300px'id='streetview'>
+  
+		</div>
+
+  	</div>
+  </div>  
+
+
+</div>

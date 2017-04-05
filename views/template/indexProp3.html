@@ -1,0 +1,29 @@
+<div
+  ></div>
+<div class='col-lg-4 col-md-4 col-sm-4 col-xs-6' ng-repeat="indexProp in indexProps">
+  <div class="index_box" ng-click='showPropDetail(indexProp.REFERENCE)'>
+    <div class="index_title" style="height:42px; padding:0;">{{indexProp.PREMISES}}</div>
+    <div class="index_pic"> <img src="{{base.thumbImage}}{{indexProp.PHOTONUM}}" class='img-responsive' style='max-height:150px'> </div>    
+    <table border="0" cellpadding="0" cellspacing="0" class="smoothCorner2 " onclick="window.open('./propDetail.php?id=290','','scrollbars=1, resizable=1,width=1000,height=880')">
+  <tbody>    
+    <tr class="bg6 size3" height="30">
+      <td width="130" rowspan="2" class="fcolor5" align="center"><div class="fcolor5 area"><strong><span class="pArea"></span></strong></div>
+        <div class="fcolor5 areaUnit bold size1">{{indexProp.AREA}}呎</div></td>
+      <td width="193" align="left" style="padding-left:25px;" class="fcolor5"><span class="bold text_color2">售 $</span> <span class="text_color3"><b>{{indexProp.PRICE |currencyunit:{unit:'萬',
+                    moneyformat:true,
+                    empty:'---'}
+                                                            }}</b></span><span class="text_color2">萬</span></td>
+    </tr>
+    <tr class="bg7 size3" height="30">
+      <td align="left" style="padding-left:25px;" class="fcolor4"><span class="text_color2">租 $</span> <span class="text_color3"><b>{{indexProp.RENT |currencyunit:{
+                                                      unit:'',
+                                                      showUnit:true,moneyformat:true,
+                                              empty:'---'
+                                                    }
+                                                  }}</b></span><span class="text_color2">/月</span></td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div>
+

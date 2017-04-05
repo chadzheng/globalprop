@@ -1,0 +1,191 @@
+<link rel="stylesheet" href="styles/transSearch1.css">
+<div class='col-xs-12 searchControl'  ng-controller='transSearchCtrl'>
+  <div style='border:2px solid #79BD28;-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;'>
+    <div class='row' style='margin-top:10px'>
+      <!--<div class='col-md-1 col-sm-3 col-xs-3 margin-top-8'>
+        <span>售</span>
+        <input type="radio" name="type" value='1'  ng-model='params.type'/>
+      </div>
+      <div class='col-md-1 col-sm-3 col-xs-3 margin-top-8' style=''>
+        <span>租</span>
+        <input type="radio" name="type" value='2'   ng-model='params.type'/>
+      </div>-->
+       <div class='col-md-5 col-sm-6 col-xs-6 margin-top-8'>
+        <span>地區</span>
+        <input type="textbox" class='width-70'  name="district" ng-click='selectDist()' ng-model='districtText' readonly/>
+      </div>
+
+      <div class='col-md-1 col-sm-1 col-xs-2 margin-top-8'>
+        <span>價錢</span>
+      </div>
+      <div class='col-md-4 col-sm-5 col-xs-4 margin-top-8'>
+        
+          <div ui-slider="{range: true}" 
+              min="{{priceSlider.min}}" 
+              max="{{priceSlider.max}}" 
+              step="{{priceSlider.step}}" 
+              use-decimals 
+              ng-model="priceSlider.range"></div>
+      </div>
+      <div class='col-md-2 col-sm-4 col-xs-6 margin-top-8' >
+        {{priceSlider.range[0]|currencyunit:{unit:'萬',showUnit:true,decimals:'0'}
+      }}
+        至
+        {{priceSlider.range[1]|currencyunit:{unit:'萬',showUnit:true,decimals:'0',max:priceSlider.max}
+      }}
+      </div>
+    </div>
+     <div class='row' style='margin-top:10px'>
+      <div class='col-md-2 col-sm-6 col-xs-6 margin-top-8'>
+       <span> 物業</span>
+        <input type="textbox" class='width-70'   name="bld" ng-model='params.bld' />
+      </div>
+      <div class='col-md-3 col-sm-6 col-xs-6 margin-top-8'>
+        <span>用途</span>
+        <input type="textbox"  name="usage" class='width-70' ng-click='selectUsage()' ng-model='usageText' readonly/>
+      </div>
+     <div class='col-md-2  col-sm-1 col-xs-2 margin-top-8'>
+        <span>成交日期</span>
+      </div>
+      <div class='col-md-2 col-sm-2 col-xs-4 margin-top-8'>
+        
+          <input type="text" class="form-control" 
+                    datepicker-popup="yyyy/MM/dd"  
+                    ng-click="date1Open=true" 
+                    ng-model="params.date1" 
+                    is-open="date1Open" 
+                   show-button-bar=false
+                    close-text="Close" />
+
+      </div>
+      <div class='col-md-1 col-sm-1 col-xs-3 margin-top-8'>
+        至
+      </div>
+      <div class='col-md-2 col-sm-4 col-xs-6 margin-top-8'>
+         <input type="text" class="form-control" 
+                    datepicker-popup="yyyy/MM/dd" 
+                    ng-click="date2Open=true" 
+                    ng-model="params.date2" 
+                    is-open="date2Open" 
+                    show-button-bar=false
+                    datepicker-options="{
+                                  formatYear: 'yy',
+                                  startingDay: 1
+                                }"  
+                     close-text="Close" />
+      </div>
+     <!--- 
+      <div class='col-md-1  col-sm-1 col-xs-2 margin-top-8'>
+        <span>面積</span>
+      </div>
+      <div class='col-md-4 col-sm-5 col-xs-4 margin-top-8'>
+        
+          <div ui-slider="{range: true}" 
+              min="{{areaSlider.min}}" 
+              max="{{areaSlider.max}}" 
+              step="{{areaSlider.step}}" 
+              use-decimals 
+              ng-model="areaSlider.range"></div>
+      </div>
+      <div class='col-md-2 col-sm-4 col-xs-6 margin-top-8'>
+        {{areaSlider.range[0]|currencyunit:'呎':true:'0'}}
+        至
+        {{areaSlider.range[1]|currencyunit:'呎':true:'0':areaSlider.max}}
+      </div>
+      ---->
+    </div>
+    <div class="row margin-top-8">
+      <div class='col-md-8 hidden-xs'>
+      </div>
+      <div class='col-md-4 col-sm-5 col-xs-8'>        
+        <button id="ph_resetBtn" class='ph_resetBtn' type="" ng-click='reset()' value="">
+        <button id="ph_submitBtn" class='ph_submitBtn' type="" ng-click='submit()' value=""/>        
+      </div>
+    </div>
+ 
+
+   <div class="col-md-12" style="padding:0; margin-top:10px;">
+    <div class="col-md-2" style="padding:0">排序
+      <select name="sort_by" ng-model='params.sort_by' id="sortBy" ng-change='submit()'>
+        <option value="sort_date">上盤日期</option>
+        <option value="sort_price">價錢</option>
+        <option value="sort_area">面積</option>
+      </select>
+    </div>
+    <div class="col-md-1" style="padding:0">
+      <input type="radio" ng-model='params.sort_method' name="sort_method" id="asc" value="a" ng-change='submit()'>
+      <label for="asc">小至大</label>
+    </div>
+    <div class="col-md-1" style="padding:0">
+      <input type="radio" ng-model='params.sort_method' name="sort_method" id="desc" value="d" checked="checked" ng-change='submit()'>
+      <label for="desc">大至小</label>
+    </div>
+  </div>
+</div>   
+
+
+<script type="text/ng-template" id="District.html">
+        <div class="modal-header">
+            <h3 class="modal-title">請選擇地區</h3>
+        </div>
+        <div class="modal-body row" >
+            <div class='col-md-3'>
+              <div class='row'>香港</div>
+              <div ng-repeat="district in districts|filter:{ZONE:'hk'}">
+                <input type='checkbox' ng-model='district.selected'></input>
+                {{district.DISTRICTNAME}}
+
+              </div>
+            </div>
+             <div class='col-md-3'>
+              <div class='row'>九龍</div>
+              <div ng-repeat="district in districts|filter:{ZONE:'kln'}">
+                <input type='checkbox' ng-model='district.selected'></input>
+                {{district.DISTRICTNAME}}
+
+              </div>
+            </div>
+            <div class='col-md-3'>
+              <div class='row'>新界</div>
+              <div ng-repeat="district in districts|filter:{ZONE:'nt'}">
+                <input type='checkbox' ng-model='district.selected'></input>
+                {{district.DISTRICTNAME}}
+
+              </div>
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="Usage.html">
+        <div class="modal-header">
+            <h3 class="modal-title">請選擇用途</h3>
+        </div>
+        <div class="modal-body row" >
+            <div class='' style='margin-left:5%'>
+              
+              <div ng-repeat="usage in usages">
+                <input type='checkbox' ng-model='usage.selected'></input>
+                {{usage.C_USAGE}}
+
+              </div>
+            </div>
+             
+            
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+
+  </div>
+
+
