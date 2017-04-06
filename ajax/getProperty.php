@@ -35,12 +35,12 @@ switch ($_GET['type']){
 	break;
 	case 'indexProp':
 		if ($testdata){
-			$search_list= file_get_contents('../data/indexprop.txt');
-		}else 
-		{
+			 $search_list= file_get_contents('../data/indexprop.txt');
+		}else{
 			$para				=	$_POST;
+			
 			$_SESSION['propertySearch']=$_POST;
-// var_dump($_POST);
+ 
 			$pListLoader		=	new resPropertyListNew;
 					$pListLoader->setPropertyListQueryParameter($_POST);
 			$search_list		=	($pListLoader->getIndexPropertyList());
